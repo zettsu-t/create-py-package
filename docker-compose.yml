@@ -1,0 +1,10 @@
+version: '3'
+services:
+  my_notebook:
+    build: ./my_notebook
+    image: my_notebook
+    user: jovyan
+    ports:
+      - 8888:8888
+    volumes:
+      - .:/home/jovyan/work
