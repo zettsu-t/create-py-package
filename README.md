@@ -7,7 +7,7 @@ This is an introduction to use [Python Package Template Project](https://github.
 We build a Docker container based on [jupyter/datascience-notebook](https://hub.docker.com/r/jupyter/datascience-notebook/) using docker-compose. `bash docker_build.sh` in this repository does the same thing below.
 
 ```bash
-docker-compose build --build-arg $(< password_digest.txt)
+docker-compose build --build-arg "$(< password_digest.txt)"
 ```
 
 This will install Linux packages and Python packages which we use later. See [Dockerfile](my_notebook/Dockerfile) for more details.

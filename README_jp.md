@@ -7,7 +7,7 @@
 [jupyter/datascience-notebook](https://hub.docker.com/r/jupyter/datascience-notebook/) を基にしたコンテナを、以下のコマンドでビルドする。同じことを同梱の `bash docker_build.sh` で実行する。
 
 ```bash
-docker-compose build --build-arg $(< password_digest.txt)
+docker-compose build --build-arg "$(< password_digest.txt)"
 ```
 
 必要なLinuxパッケージとPythonパッケージを追加する。詳しくは[Dockerfile](my_notebook/Dockerfile)を参照すること。
