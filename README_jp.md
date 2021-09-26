@@ -110,7 +110,7 @@ pipenv run python setup.py bdist_wheel
 pipenv install ./dist/py_package_template-0.2.0-py3-none-any.whl
 ```
 
-### 雛形を実行する
+## 雛形を実行する
 
 Jupyter Notebook から、インストールしたパッケージを使う。ウェブブラウザで **localhost:8888** からログインして、新しいNotebookを作成し、以下を実行すると結果が返る。
 
