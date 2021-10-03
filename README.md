@@ -97,10 +97,14 @@ find . -type f | xargs egrep -e "3\\.7"
 
 ## Building the package template
 
-The package template contains an executable sample as a Python package and we can do workflows from testing to installing the package as below. If some commands fail due to missing packages, we modify the Dockerfile to install them.
+The package template contains an executable sample as a Python package and we can do workflows from testing to installing the package as README.md in [Python Package Template Project](https://github.com/AlexIoannides/py-package-template). If some commands fail due to missing packages, we modify the Dockerfile to install them.
+
+We can measure test coverage of the package template. **htmlcov/index.html** is created after we run pytest.
 
 ```bash
 pipenv run pytest
+pipenv run pytest --cov=.
+pipenv run pytest --cov=. --cov-report=html
 pipenv run flake8 py_pkg
 pipenv run mypy py_pkg/*.py
 pipenv run sphinx-quickstart
@@ -112,7 +116,7 @@ pipenv install ./dist/py_package_template-0.2.0-py3-none-any.whl
 
 ## Running the package in Jupyter Notebook
 
-Now we can run the package in Jupyter Notebook. We log in to the Jupyter Notebook via **localhost:8888** via a Web browser, create a Python notebook, and execute the Python script below in a code chunk.
+Now we can run the package in Jupyter Notebook. We log in to Jupyter Notebook at **localhost:8888** via a Web browser, create a Python notebook, and execute the Python script below in a code chunk.
 
 ```python
 from py_pkg.curves import DemandCurve

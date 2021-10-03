@@ -1,6 +1,6 @@
 # Pythonパッケージの雛型を作る
 
-[Python Package Template Project](https://github.com/AlexIoannides/py-package-template)を使って、Pythonパッケージの開発環境を構築する。
+[Python Package Template Project](https://github.com/AlexIoannides/py-package-template) を使って、Pythonパッケージの開発環境を構築する。
 
 ## Dockerコンテナをビルドする
 
@@ -97,10 +97,14 @@ find . -type f | xargs egrep -e "3\\.7"
 
 ## 雛型をビルドする
 
-雛形にはすでにコードがあるので、 README.md に従ってテストからインストールまで一通りの処理をできることを確認する。失敗したときはパッケージが足りないので、Dockerfileを修正する。
+雛形にはすでにコードがあるので、 [Python Package Template Project](https://github.com/AlexIoannides/py-package-template) の README.md に従ってテストからインストールまで一通りの処理をできることを確認する。失敗したときはパッケージが足りないので、Dockerfileを修正する。
+
+カバレッジ測定を、[Python Package Template Project](https://github.com/AlexIoannides/py-package-template) から追加した。 htmlcov/index.html にカバレッジの測定結果が出力される。
 
 ```bash
 pipenv run pytest
+pipenv run pytest --cov=.
+pipenv run pytest --cov=. --cov-report=html
 pipenv run flake8 py_pkg
 pipenv run mypy py_pkg/*.py
 pipenv run sphinx-quickstart
